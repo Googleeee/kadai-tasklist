@@ -1,0 +1,9 @@
+<h1>id: <%= @task.id %> - Details</h1>
+
+<p><%= @task.content %></p>
+
+<%= link_to 'Back to Tasks', tasks_path %>
+
+<%= link_to 'Edit This Task', edit_task_path(@task) %>
+
+<%= link_to 'Delete This Task', @task, method: :delete, data: { confirm: 'Do you really want to delete this task?' } %>

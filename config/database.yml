@@ -16,6 +16,7 @@ default: &default
   username: root
   password:
   socket: /var/lib/mysql/mysql.sock
+  
 
 development:
   <<: *default
@@ -48,7 +49,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: tasklist_production
-  username: tasklist
-  password: <%= ENV['TASKLIST_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: tasklist-yuto_production
+  username: tasklist-yuto
+  password: <%= ENV['TASKLIST-YUTO_DATABASE_PASSWORD'] %>
